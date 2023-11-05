@@ -4,7 +4,9 @@ This repository contains the code and materials for the midterm project of the Z
 
 ## Overview
 
-In this project, I have worked on a [Kaggle binary classification dataset](https://www.kaggle.com/datasets/muhammadshahidazeem/customer-conversion-dataset-for-stuffmart-com) that contains information related to potential leads and their interactions with a hypothetical business or website. The purpose of the current project is to predict wether these leads will convert into paying customers based on their previous interactions. I have choosen this particular problem because I am keen on applying machine learning on the digital marketing space and I can see such a model being relevant for a website operator who wants to maximize their conversion rate by for example targeting campaigns at users who can be very close to convert to help them with that extra push.
+In this project, I have worked on a [Kaggle binary classification dataset](https://www.kaggle.com/datasets/muhammadshahidazeem/customer-conversion-dataset-for-stuffmart-com) that contains information related to potential leads and their interactions with a hypothetical business or website. The purpose of the current project is to predict wether these leads will convert into paying customers based on their previous interactions. 
+
+I have choosen this particular problem because I am keen on applying machine learning on the digital marketing space and I can see such a model being relevant for a website operator who wants to maximize their conversion rate by for example targeting campaigns at users who can be very close to convert to help them with that extra push.
 
 After testing with several models XGBoost was choosen based on the AUC ROC curve criteria. You can check my exploration journey on this [notebook](https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction/blob/main/notebook.ipynb).
 
@@ -42,16 +44,18 @@ Finally, you´ll need to have Docker installed on your machine to build and exec
 
 ### Setup instructions
 
-1. Clone this repository.
+#### 1. Clone this repository.
 ```
 git clone https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction.git
 ```
-2. Build the docker image
+#### 2. Build the docker image
 ```
 docker build -t {build-tag} .
 ```
 `build-tag`: Specifies any user-defined tag for docker image. eg. `conv-prediction`
-3. Run the docker image
+
+#### 3. Run the docker image
+
 ```
 docker run -it -p 9696:9696 {build-tag}:latest
 ```
@@ -59,7 +63,9 @@ in case you used the suggested tag above code would be:
 ```
 docker run -it -p 9696:9696 conv-prediction:latest
 ```
-4. In another terminal run the predict-test.py.
+
+#### 4. Now use the predict-tester script to test the service
+In another terminal run the predict-tester.py.
 ```
 python predict-tester.py
 ```
