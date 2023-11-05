@@ -20,4 +20,4 @@ COPY ["*.py", "model.bin", "./"]
 EXPOSE 9696
 
 # If we run the Docker image, we want our churn app to be running
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "churn_serving:app"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "predict:app"]

@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 numpy = "==1.21.5"
-flask = "==1.1.2"
+flask = "*"
 xgboost = "==1.7.3"
 scikit-learn = "==1.0.2"
+gunicorn = "*"
 
 [dev-packages]
 
