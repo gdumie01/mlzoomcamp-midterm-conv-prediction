@@ -71,3 +71,4 @@ python predict-tester.py
 ```
 6. If you want to use other data you can just change it in the scritp and run again
 ## Sample output
+![Sample output](https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction/blob/main/data/sample_output.png)
