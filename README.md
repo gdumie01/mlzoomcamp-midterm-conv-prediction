@@ -33,6 +33,7 @@ For the notebook you´ll need:
 - Pandas
 - Scikit-Learn
 - XGBoost
+- Seaborn
 
 To run the python scripts you´ll need:
 - Flask
