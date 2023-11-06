@@ -10,6 +10,13 @@ I have choosen this particular problem because I am keen on applying machine lea
 
 After testing with several models XGBoost was choosen based on the AUC ROC curve criteria. You can check my exploration journey on this [notebook](https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction/blob/main/notebook.ipynb).
 
+## Problem description and usage
+### Problem description
+Although this a theoretical dataset, the underlying problem to these type of datasets would be to help a marketing or sales team predict who are the most likely to conver users based on the interaction they've had with the website. Imagine that you own a SaaS services or any website. If you track your website audience correctly (with data similar to the one contained in this dataset) you can develop predictive models that help you guess which costumers are more likely to convert vs. others so that you can act on it someway - giving them an extra sales call, send them a discount via email, etc.
+
+### Usage
+As described above, with a model such as this, the marketing and sales team of a website can create dedicated campaigns to target users that the model predict has being very likely to convert. As such, we want to provide not only a label 0, 1, but also a likelihood percentage which we can then make available via a webservice that can then be consumed by the CRM so that the teams are able to setup their specific campaigns.
+
 ## Dataset
 
 ### Where to find
