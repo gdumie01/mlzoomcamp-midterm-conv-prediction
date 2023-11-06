@@ -82,6 +82,7 @@ python predict.py
 ```
 ##### 6. On another terminal you can use the test file 
 ```
+cd mlzoomcamp-midterm-conv-prediction
 pipenv shell
 python predict-tester.py
 ```
