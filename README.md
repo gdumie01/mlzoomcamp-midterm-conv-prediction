@@ -41,10 +41,13 @@ For the notebook you´ll need:
 - Scikit-Learn
 - XGBoost
 - Seaborn
+- Matplotlib
+- IPython
 
 To run the python scripts you´ll need:
 - Flask
 - gunicorn
+- Requests (optional for the tester script)
 
 Project contains a `Pipfile` and a `Pipfile.lock` to setup the virtual environment with the proper versions for train and predict scripts.
 
@@ -52,17 +55,50 @@ Finally, you´ll need to have Docker installed on your machine to build and exec
 
 ### Setup instructions
 
-#### 1. Clone this repository.
+#### To train the model
+##### 1. Clone this repository.
 ```
 git clone https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction.git
 ```
-#### 2. Build the docker image
+##### 2. Install the pip environment inside the repository directory
+```
+cd mlzoomcamp-midterm-conv-prediction
+pipenv install
+```
+Wait for pipenv to be done with installing the packages and dependencies.
+
+##### 3. Launch the pipenv shell
+```
+pipenv shell
+```
+##### 4. Train the model inside the pipenv shell
+```
+python train.py
+```
+should generate/update the file model.bin
+##### 5. Run the predict service
+```
+python predict.py
+```
+##### 6. On another terminal you can use the test file 
+```
+pipenv shell
+python predict-tester.py
+```
+Change the variables in the script to test with different values.
+
+#### To run the Docker container version of the service
+##### 1. Clone this repository.
+```
+git clone https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction.git
+```
+##### 2. Build the docker image
 ```
 docker build -t {build-tag} .
 ```
 `build-tag`: Specifies any user-defined tag for docker image. eg. `conv-prediction`
 
-#### 3. Run the docker image
+##### 3. Run the docker image
 
 ```
 docker run -it -p 9696:9696 {build-tag}:latest
@@ -72,11 +108,11 @@ in case you used the suggested tag above code would be:
 docker run -it -p 9696:9696 conv-prediction:latest
 ```
 
-#### 4. Now use the predict-tester script to test the service
+##### 4. Now use the predict-tester script to test the service
 In another terminal run the predict-tester.py.
 ```
 python predict-tester.py
 ```
-6. If you want to use other data you can just change it in the scritp and run again
+##### 5. If you want to use other data you can just change it in the scritp and run again
 ## Sample output
 ![Sample output](https://github.com/gdumie01/mlzoomcamp-midterm-conv-prediction/blob/main/data/sample_output.png)
